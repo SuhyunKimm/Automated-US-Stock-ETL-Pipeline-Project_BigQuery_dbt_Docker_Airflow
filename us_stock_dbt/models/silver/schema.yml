@@ -1,0 +1,33 @@
+
+version: 2
+
+models:
+  - name: silver_tickers
+    description: "silver layer of tickers table"
+    columns:
+      - name: ticker
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: silver_us_market_holidays
+    description: "silver layer of us market holidays table"
+    columns:
+      - name: date
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: silver_us_stocks
+    description: "silver layer of us stocks table"
+    columns:
+      - name: ticker
+        description: "Stock ticker symbol"
+        data_tests:
+          - not_null
+      - name: date
+        description: "Trading date"
+        data_tests:
+          - not_null

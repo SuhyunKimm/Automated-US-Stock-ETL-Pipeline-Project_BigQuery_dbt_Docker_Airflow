@@ -1,0 +1,31 @@
+
+version: 2
+
+models:
+  - name: dim_tickers
+    description: "gold dimension table for stock tickers"
+    columns:
+      - name: tickerId
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+    description: "gold dimension table for date"
+    columns:
+      - name: dateKey
+        description: "The primary key for this table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: fact_us_stock_daily
+    description: "daily stock price fact table"
+    columns:
+      - name: tickerId
+        data_tests:
+          - not_null
+      - name: date
+        data_tests:
+          - not_null

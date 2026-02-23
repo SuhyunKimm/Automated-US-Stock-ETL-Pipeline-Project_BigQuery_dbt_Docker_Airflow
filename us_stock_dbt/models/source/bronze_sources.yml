@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: us-stock-project-487701
+    schema: us_stock
+    tables:
+      - name: bronze_us_stocks
+      - name: bronze_us_market_holidays
+      - name: bronze_tickers
